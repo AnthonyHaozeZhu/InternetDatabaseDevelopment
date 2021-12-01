@@ -10,7 +10,7 @@ use yii\bootstrap4\Html;
 use yii\bootstrap4\Nav;
 use yii\bootstrap4\NavBar;
 
-// $this->context->layout = false; //不使用布局
+$this->context->layout = false; //不使用布局
 
 AppAsset::register($this);
 ?>
@@ -72,7 +72,7 @@ AppAsset::register($this);
                 ],
             ]);
             $menuItems = [
-                ['label' => '主页', 'url' => ['#section-主页']],
+                ['label' => '主页', 'url' => ['#主页']],
                 ['label' => '冬奥会简介', 'url' => ['#section-about']],
                 ['label' => 'Services', 'url' => ['#section-services']],
                 ['label' => '体育项目', 'url' => ['#section-industries']],
@@ -162,7 +162,7 @@ AppAsset::register($this);
   <div class="container">
 	<div class="row justify-content-center mb-5">
 	  <div class="col-md-7 text-center border-primary">
-		<a href = "/info"><h2 class="font-weight-light text-primary" data-aos="fade">历史信息</h2></a>
+		<a href = "/advanced/frontend/web/index.php?r=info"><h2 class="font-weight-light text-primary" data-aos="fade">历史信息</h2></a>
 	  </div>
 	</div>
 	
@@ -208,7 +208,7 @@ AppAsset::register($this);
   <div class="container">
 	<div class="row justify-content-center mb-5">
 	  <div class="col-md-7 text-center border-primary">
-	  <a href = "/records"><h2 class="font-weight-light text-primary" data-aos="fade">世界纪录</h2></a>
+	  <a href = "/advanced/frontend/web/index.php?r=records"><h2 class="font-weight-light text-primary" data-aos="fade">世界纪录</h2></a>
 	  </div>
 	</div>
 	<div class="row">
@@ -328,7 +328,7 @@ AppAsset::register($this);
   <div class="container">
 	<div class="row justify-content-center mb-5">
 	  <div class="col-md-7 text-center border-primary">
-		<h2 class="mb-0 text-primary"><a href="/sports">体育项目</a></h2>
+		<h2 class="mb-0 text-primary"><a href="/advanced/frontend/web/index.php?r=sports">体育项目</a></h2>
 		<p class="color-black-opacity-5">常见的冬奥项目</p>
 	  </div>
 	</div>
