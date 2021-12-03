@@ -1,15 +1,15 @@
 <?php
 
-namespace frontend\models;
+namespace backend\models;
 
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
-use frontend\models\Ogssportsid;
+use backend\models\Ogathletes;
 
 /**
- * OgssportsidSearch represents the model behind the search form of `frontend\models\Ogssportsid`.
+ * OgathletesSearch represents the model behind the search form of `backend\models\Ogathletes`.
  */
-class OgssportsidSearch extends Ogssportsid
+class OgathletesSearch extends Ogathletes
 {
     /**
      * {@inheritdoc}
@@ -17,8 +17,8 @@ class OgssportsidSearch extends Ogssportsid
     public function rules()
     {
         return [
-            [['smallSportsID', 'sSportsID'], 'integer'],
-            [['rsmallSports'], 'safe'],
+            [['aID', 'alsRetired'], 'integer'],
+            [['aName', 'aCountry'], 'safe'],
         ];
     }
 
@@ -40,7 +40,7 @@ class OgssportsidSearch extends Ogssportsid
      */
     public function search($params)
     {
-        $query = Ogssportsid::find();
+        $query = Ogathletes::find();
 
         // add conditions that should always apply here
 
@@ -58,11 +58,12 @@ class OgssportsidSearch extends Ogssportsid
 
         // grid filtering conditions
         $query->andFilterWhere([
-            'smallSportsID' => $this->smallSportsID,
-            'sSportsID' => $this->sSportsID,
+            'aID' => $this->aID,
+            'alsRetired' => $this->alsRetired,
         ]);
 
-        $query->andFilterWhere(['like', 'rsmallSports', $this->rsmallSports]);
+        $query->andFilterWhere(['like', 'aName', $this->aName])
+            ->andFilterWhere(['like', 'aCountry', $this->aCountry]);
 
         return $dataProvider;
     }

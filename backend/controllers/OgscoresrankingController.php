@@ -1,9 +1,9 @@
 <?php
 
-namespace frontend\controllers;
+namespace backend\controllers;
 
-use frontend\models\Ogscoresranking;
-use frontend\models\OgscoresrankingSearch;
+use backend\models\Ogscoresranking;
+use backend\models\OgscoresrankingSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;

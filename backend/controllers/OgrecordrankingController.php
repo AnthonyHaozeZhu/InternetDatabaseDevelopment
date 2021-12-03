@@ -1,17 +1,17 @@
 <?php
 
-namespace frontend\controllers;
+namespace backend\controllers;
 
-use frontend\models\Ognoticeboard;
-use frontend\models\OgnoticeboardSearch;
+use backend\models\Ogrecordranking;
+use backend\models\OgrecordrankingSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
 /**
- * OgnoticeboardController implements the CRUD actions for Ognoticeboard model.
+ * OgrecordrankingController implements the CRUD actions for Ogrecordranking model.
  */
-class OgnoticeboardController extends Controller
+class OgrecordrankingController extends Controller
 {
     /**
      * @inheritDoc
@@ -32,12 +32,12 @@ class OgnoticeboardController extends Controller
     }
 
     /**
-     * Lists all Ognoticeboard models.
+     * Lists all Ogrecordranking models.
      * @return mixed
      */
     public function actionIndex()
     {
-        $searchModel = new OgnoticeboardSearch();
+        $searchModel = new OgrecordrankingSearch();
         $dataProvider = $searchModel->search($this->request->queryParams);
 
         return $this->render('index', [
@@ -47,7 +47,7 @@ class OgnoticeboardController extends Controller
     }
 
     /**
-     * Displays a single Ognoticeboard model.
+     * Displays a single Ogrecordranking model.
      * @param integer $id
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
@@ -60,17 +60,17 @@ class OgnoticeboardController extends Controller
     }
 
     /**
-     * Creates a new Ognoticeboard model.
+     * Creates a new Ogrecordranking model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
     public function actionCreate()
     {
-        $model = new Ognoticeboard();
+        $model = new Ogrecordranking();
 
         if ($this->request->isPost) {
             if ($model->load($this->request->post()) && $model->save()) {
-                return $this->redirect(['view', 'id' => $model->nId]);
+                return $this->redirect(['view', 'id' => $model->sportsID]);
             }
         } else {
             $model->loadDefaultValues();
@@ -82,7 +82,7 @@ class OgnoticeboardController extends Controller
     }
 
     /**
-     * Updates an existing Ognoticeboard model.
+     * Updates an existing Ogrecordranking model.
      * If update is successful, the browser will be redirected to the 'view' page.
      * @param integer $id
      * @return mixed
@@ -93,7 +93,7 @@ class OgnoticeboardController extends Controller
         $model = $this->findModel($id);
 
         if ($this->request->isPost && $model->load($this->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->nId]);
+            return $this->redirect(['view', 'id' => $model->sportsID]);
         }
 
         return $this->render('update', [
@@ -102,7 +102,7 @@ class OgnoticeboardController extends Controller
     }
 
     /**
-     * Deletes an existing Ognoticeboard model.
+     * Deletes an existing Ogrecordranking model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
      * @param integer $id
      * @return mixed
@@ -116,15 +116,15 @@ class OgnoticeboardController extends Controller
     }
 
     /**
-     * Finds the Ognoticeboard model based on its primary key value.
+     * Finds the Ogrecordranking model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
      * @param integer $id
-     * @return Ognoticeboard the loaded model
+     * @return Ogrecordranking the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
     protected function findModel($id)
     {
-        if (($model = Ognoticeboard::findOne($id)) !== null) {
+        if (($model = Ogrecordranking::findOne($id)) !== null) {
             return $model;
         }
 

@@ -1,15 +1,15 @@
 <?php
 
-namespace frontend\models;
+namespace backend\models;
 
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
-use frontend\models\Oguser;
+use backend\models\Ogyearog;
 
 /**
- * OguserSearch represents the model behind the search form of `frontend\models\Oguser`.
+ * OgyearogSearch represents the model behind the search form of `backend\models\Ogyearog`.
  */
-class OguserSearch extends Oguser
+class OgyearogSearch extends Ogyearog
 {
     /**
      * {@inheritdoc}
@@ -17,8 +17,8 @@ class OguserSearch extends Oguser
     public function rules()
     {
         return [
-            [['idOG_User', 'uPhone', 'uAuthority'], 'integer'],
-            [['uName', 'uPwd', 'uRname'], 'safe'],
+            [['year', 'scoresRankID'], 'integer'],
+            [['country', 'hostCity'], 'safe'],
         ];
     }
 
@@ -40,7 +40,7 @@ class OguserSearch extends Oguser
      */
     public function search($params)
     {
-        $query = Oguser::find();
+        $query = Ogyearog::find();
 
         // add conditions that should always apply here
 
@@ -58,14 +58,12 @@ class OguserSearch extends Oguser
 
         // grid filtering conditions
         $query->andFilterWhere([
-            'idOG_User' => $this->idOG_User,
-            'uPhone' => $this->uPhone,
-            'uAuthority' => $this->uAuthority,
+            'year' => $this->year,
+            'scoresRankID' => $this->scoresRankID,
         ]);
 
-        $query->andFilterWhere(['like', 'uName', $this->uName])
-            ->andFilterWhere(['like', 'uPwd', $this->uPwd])
-            ->andFilterWhere(['like', 'uRname', $this->uRname]);
+        $query->andFilterWhere(['like', 'country', $this->country])
+            ->andFilterWhere(['like', 'hostCity', $this->hostCity]);
 
         return $dataProvider;
     }

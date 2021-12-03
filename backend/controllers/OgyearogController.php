@@ -1,17 +1,17 @@
 <?php
 
-namespace frontend\controllers;
+namespace backend\controllers;
 
-use frontend\models\Ogssportsid;
-use frontend\models\OgssportsidSearch;
+use backend\models\Ogyearog;
+use backend\models\OgyearogSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
 /**
- * OgssportsidController implements the CRUD actions for Ogssportsid model.
+ * OgyearogController implements the CRUD actions for Ogyearog model.
  */
-class OgssportsidController extends Controller
+class OgyearogController extends Controller
 {
     /**
      * @inheritDoc
@@ -32,12 +32,12 @@ class OgssportsidController extends Controller
     }
 
     /**
-     * Lists all Ogssportsid models.
+     * Lists all Ogyearog models.
      * @return mixed
      */
     public function actionIndex()
     {
-        $searchModel = new OgssportsidSearch();
+        $searchModel = new OgyearogSearch();
         $dataProvider = $searchModel->search($this->request->queryParams);
 
         return $this->render('index', [
@@ -47,7 +47,7 @@ class OgssportsidController extends Controller
     }
 
     /**
-     * Displays a single Ogssportsid model.
+     * Displays a single Ogyearog model.
      * @param integer $id
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
@@ -60,17 +60,17 @@ class OgssportsidController extends Controller
     }
 
     /**
-     * Creates a new Ogssportsid model.
+     * Creates a new Ogyearog model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
     public function actionCreate()
     {
-        $model = new Ogssportsid();
+        $model = new Ogyearog();
 
         if ($this->request->isPost) {
             if ($model->load($this->request->post()) && $model->save()) {
-                return $this->redirect(['view', 'id' => $model->smallSportsID]);
+                return $this->redirect(['view', 'id' => $model->year]);
             }
         } else {
             $model->loadDefaultValues();
@@ -82,7 +82,7 @@ class OgssportsidController extends Controller
     }
 
     /**
-     * Updates an existing Ogssportsid model.
+     * Updates an existing Ogyearog model.
      * If update is successful, the browser will be redirected to the 'view' page.
      * @param integer $id
      * @return mixed
@@ -93,7 +93,7 @@ class OgssportsidController extends Controller
         $model = $this->findModel($id);
 
         if ($this->request->isPost && $model->load($this->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->smallSportsID]);
+            return $this->redirect(['view', 'id' => $model->year]);
         }
 
         return $this->render('update', [
@@ -102,7 +102,7 @@ class OgssportsidController extends Controller
     }
 
     /**
-     * Deletes an existing Ogssportsid model.
+     * Deletes an existing Ogyearog model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
      * @param integer $id
      * @return mixed
@@ -116,15 +116,15 @@ class OgssportsidController extends Controller
     }
 
     /**
-     * Finds the Ogssportsid model based on its primary key value.
+     * Finds the Ogyearog model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
      * @param integer $id
-     * @return Ogssportsid the loaded model
+     * @return Ogyearog the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
     protected function findModel($id)
     {
-        if (($model = Ogssportsid::findOne($id)) !== null) {
+        if (($model = Ogyearog::findOne($id)) !== null) {
             return $model;
         }
 

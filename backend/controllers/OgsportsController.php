@@ -1,17 +1,17 @@
 <?php
 
-namespace frontend\controllers;
+namespace backend\controllers;
 
-use frontend\models\Ogrecordranking;
-use frontend\models\OgrecordrankingSearch;
+use backend\models\Ogsports;
+use backend\models\OgsportsSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
 /**
- * OgrecordrankingController implements the CRUD actions for Ogrecordranking model.
+ * OgsportsController implements the CRUD actions for Ogsports model.
  */
-class OgrecordrankingController extends Controller
+class OgsportsController extends Controller
 {
     /**
      * @inheritDoc
@@ -32,12 +32,12 @@ class OgrecordrankingController extends Controller
     }
 
     /**
-     * Lists all Ogrecordranking models.
+     * Lists all Ogsports models.
      * @return mixed
      */
     public function actionIndex()
     {
-        $searchModel = new OgrecordrankingSearch();
+        $searchModel = new OgsportsSearch();
         $dataProvider = $searchModel->search($this->request->queryParams);
 
         return $this->render('index', [
@@ -47,7 +47,7 @@ class OgrecordrankingController extends Controller
     }
 
     /**
-     * Displays a single Ogrecordranking model.
+     * Displays a single Ogsports model.
      * @param integer $id
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
@@ -60,17 +60,17 @@ class OgrecordrankingController extends Controller
     }
 
     /**
-     * Creates a new Ogrecordranking model.
+     * Creates a new Ogsports model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
     public function actionCreate()
     {
-        $model = new Ogrecordranking();
+        $model = new Ogsports();
 
         if ($this->request->isPost) {
             if ($model->load($this->request->post()) && $model->save()) {
-                return $this->redirect(['view', 'id' => $model->sportsID]);
+                return $this->redirect(['view', 'id' => $model->sSportsID]);
             }
         } else {
             $model->loadDefaultValues();
@@ -82,7 +82,7 @@ class OgrecordrankingController extends Controller
     }
 
     /**
-     * Updates an existing Ogrecordranking model.
+     * Updates an existing Ogsports model.
      * If update is successful, the browser will be redirected to the 'view' page.
      * @param integer $id
      * @return mixed
@@ -93,7 +93,7 @@ class OgrecordrankingController extends Controller
         $model = $this->findModel($id);
 
         if ($this->request->isPost && $model->load($this->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->sportsID]);
+            return $this->redirect(['view', 'id' => $model->sSportsID]);
         }
 
         return $this->render('update', [
@@ -102,7 +102,7 @@ class OgrecordrankingController extends Controller
     }
 
     /**
-     * Deletes an existing Ogrecordranking model.
+     * Deletes an existing Ogsports model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
      * @param integer $id
      * @return mixed
@@ -116,15 +116,15 @@ class OgrecordrankingController extends Controller
     }
 
     /**
-     * Finds the Ogrecordranking model based on its primary key value.
+     * Finds the Ogsports model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
      * @param integer $id
-     * @return Ogrecordranking the loaded model
+     * @return Ogsports the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
     protected function findModel($id)
     {
-        if (($model = Ogrecordranking::findOne($id)) !== null) {
+        if (($model = Ogsports::findOne($id)) !== null) {
             return $model;
         }
 

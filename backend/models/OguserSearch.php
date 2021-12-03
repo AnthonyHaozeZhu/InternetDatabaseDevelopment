@@ -1,15 +1,15 @@
 <?php
 
-namespace frontend\models;
+namespace backend\models;
 
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
-use frontend\models\Ogscoresranking;
+use backend\models\Oguser;
 
 /**
- * OgscoresrankingSearch represents the model behind the search form of `frontend\models\Ogscoresranking`.
+ * OguserSearch represents the model behind the search form of `backend\models\Oguser`.
  */
-class OgscoresrankingSearch extends Ogscoresranking
+class OguserSearch extends Oguser
 {
     /**
      * {@inheritdoc}
@@ -17,8 +17,8 @@ class OgscoresrankingSearch extends Ogscoresranking
     public function rules()
     {
         return [
-            [['rID'], 'integer'],
-            [['goldRank', 'medalsRank'], 'safe'],
+            [['idOG_User', 'uPhone', 'uAuthority'], 'integer'],
+            [['uName', 'uPwd', 'uRname'], 'safe'],
         ];
     }
 
@@ -40,11 +40,12 @@ class OgscoresrankingSearch extends Ogscoresranking
      */
     public function search($params)
     {
-        $query = Ogscoresranking::find();
+        $query = Oguser::find();
+
         // add conditions that should always apply here
 
         $dataProvider = new ActiveDataProvider([
-            'query' => $query
+            'query' => $query,
         ]);
 
         $this->load($params);
@@ -57,13 +58,15 @@ class OgscoresrankingSearch extends Ogscoresranking
 
         // grid filtering conditions
         $query->andFilterWhere([
-            'rID' => $this->rID,
+            'idOG_User' => $this->idOG_User,
+            'uPhone' => $this->uPhone,
+            'uAuthority' => $this->uAuthority,
         ]);
-        $query->andFilterWhere(['like', 'goldRank', $this->goldRank])
-            ->andFilterWhere(['like', 'medalsRank', $this->medalsRank]);
 
-        //$query2->innerJoin('yii.og_scoresranking','og_yearog.scoresRankID=og_scoresranking.rID');
-        //$query->union($query2,true);
+        $query->andFilterWhere(['like', 'uName', $this->uName])
+            ->andFilterWhere(['like', 'uPwd', $this->uPwd])
+            ->andFilterWhere(['like', 'uRname', $this->uRname]);
+
         return $dataProvider;
     }
 }

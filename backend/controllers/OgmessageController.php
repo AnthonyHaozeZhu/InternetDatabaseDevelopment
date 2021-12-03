@@ -1,17 +1,17 @@
 <?php
 
-namespace frontend\models;
+namespace backend\controllers;
 
-use frontend\models\Ogathletes;
-use frontend\models\OgathletesSearch;
+use backend\models\Ogmessageboard;
+use backend\models\OgmessageSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
 /**
- * OgathletesController implements the CRUD actions for Ogathletes model.
+ * OgmessageController implements the CRUD actions for Ogmessageboard model.
  */
-class OgathletesController extends Controller
+class OgmessageController extends Controller
 {
     /**
      * @inheritDoc
@@ -32,12 +32,12 @@ class OgathletesController extends Controller
     }
 
     /**
-     * Lists all Ogathletes models.
+     * Lists all Ogmessageboard models.
      * @return mixed
      */
     public function actionIndex()
     {
-        $searchModel = new OgathletesSearch();
+        $searchModel = new OgmessageSearch();
         $dataProvider = $searchModel->search($this->request->queryParams);
 
         return $this->render('index', [
@@ -47,7 +47,7 @@ class OgathletesController extends Controller
     }
 
     /**
-     * Displays a single Ogathletes model.
+     * Displays a single Ogmessageboard model.
      * @param integer $id
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
@@ -60,17 +60,17 @@ class OgathletesController extends Controller
     }
 
     /**
-     * Creates a new Ogathletes model.
+     * Creates a new Ogmessageboard model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
     public function actionCreate()
     {
-        $model = new Ogathletes();
+        $model = new Ogmessageboard();
 
         if ($this->request->isPost) {
             if ($model->load($this->request->post()) && $model->save()) {
-                return $this->redirect(['view', 'id' => $model->aID]);
+                return $this->redirect(['view', 'id' => $model->bId]);
             }
         } else {
             $model->loadDefaultValues();
@@ -82,7 +82,7 @@ class OgathletesController extends Controller
     }
 
     /**
-     * Updates an existing Ogathletes model.
+     * Updates an existing Ogmessageboard model.
      * If update is successful, the browser will be redirected to the 'view' page.
      * @param integer $id
      * @return mixed
@@ -93,7 +93,7 @@ class OgathletesController extends Controller
         $model = $this->findModel($id);
 
         if ($this->request->isPost && $model->load($this->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->aID]);
+            return $this->redirect(['view', 'id' => $model->bId]);
         }
 
         return $this->render('update', [
@@ -102,7 +102,7 @@ class OgathletesController extends Controller
     }
 
     /**
-     * Deletes an existing Ogathletes model.
+     * Deletes an existing Ogmessageboard model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
      * @param integer $id
      * @return mixed
@@ -116,15 +116,15 @@ class OgathletesController extends Controller
     }
 
     /**
-     * Finds the Ogathletes model based on its primary key value.
+     * Finds the Ogmessageboard model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
      * @param integer $id
-     * @return Ogathletes the loaded model
+     * @return Ogmessageboard the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
     protected function findModel($id)
     {
-        if (($model = Ogathletes::findOne($id)) !== null) {
+        if (($model = Ogmessageboard::findOne($id)) !== null) {
             return $model;
         }
 

@@ -1,9 +1,9 @@
 <?php
 
-namespace frontend\controllers;
+namespace backend\models;
 
-use frontend\models\Ogathletes;
-use frontend\models\OgathletesSearch;
+use backend\models\Ogathletes;
+use backend\models\OgathletesSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;

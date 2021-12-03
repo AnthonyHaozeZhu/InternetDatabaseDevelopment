@@ -1,17 +1,17 @@
 <?php
 
-namespace frontend\controllers;
+namespace backend\controllers;
 
-use frontend\models\Ogauthority;
-use frontend\models\OgauthoritySearch;
+use backend\models\Ogssportsid;
+use backend\models\OgssportsidSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
 /**
- * OgauthorityController implements the CRUD actions for Ogauthority model.
+ * OgssportsidController implements the CRUD actions for Ogssportsid model.
  */
-class OgauthorityController extends Controller
+class OgssportsidController extends Controller
 {
     /**
      * @inheritDoc
@@ -32,12 +32,12 @@ class OgauthorityController extends Controller
     }
 
     /**
-     * Lists all Ogauthority models.
+     * Lists all Ogssportsid models.
      * @return mixed
      */
     public function actionIndex()
     {
-        $searchModel = new OgauthoritySearch();
+        $searchModel = new OgssportsidSearch();
         $dataProvider = $searchModel->search($this->request->queryParams);
 
         return $this->render('index', [
@@ -47,7 +47,7 @@ class OgauthorityController extends Controller
     }
 
     /**
-     * Displays a single Ogauthority model.
+     * Displays a single Ogssportsid model.
      * @param integer $id
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
@@ -60,17 +60,17 @@ class OgauthorityController extends Controller
     }
 
     /**
-     * Creates a new Ogauthority model.
+     * Creates a new Ogssportsid model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
     public function actionCreate()
     {
-        $model = new Ogauthority();
+        $model = new Ogssportsid();
 
         if ($this->request->isPost) {
             if ($model->load($this->request->post()) && $model->save()) {
-                return $this->redirect(['view', 'id' => $model->userId]);
+                return $this->redirect(['view', 'id' => $model->smallSportsID]);
             }
         } else {
             $model->loadDefaultValues();
@@ -82,7 +82,7 @@ class OgauthorityController extends Controller
     }
 
     /**
-     * Updates an existing Ogauthority model.
+     * Updates an existing Ogssportsid model.
      * If update is successful, the browser will be redirected to the 'view' page.
      * @param integer $id
      * @return mixed
@@ -93,7 +93,7 @@ class OgauthorityController extends Controller
         $model = $this->findModel($id);
 
         if ($this->request->isPost && $model->load($this->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->userId]);
+            return $this->redirect(['view', 'id' => $model->smallSportsID]);
         }
 
         return $this->render('update', [
@@ -102,7 +102,7 @@ class OgauthorityController extends Controller
     }
 
     /**
-     * Deletes an existing Ogauthority model.
+     * Deletes an existing Ogssportsid model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
      * @param integer $id
      * @return mixed
@@ -116,15 +116,15 @@ class OgauthorityController extends Controller
     }
 
     /**
-     * Finds the Ogauthority model based on its primary key value.
+     * Finds the Ogssportsid model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
      * @param integer $id
-     * @return Ogauthority the loaded model
+     * @return Ogssportsid the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
     protected function findModel($id)
     {
-        if (($model = Ogauthority::findOne($id)) !== null) {
+        if (($model = Ogssportsid::findOne($id)) !== null) {
             return $model;
         }
 

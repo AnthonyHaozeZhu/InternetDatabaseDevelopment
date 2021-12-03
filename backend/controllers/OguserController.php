@@ -1,17 +1,17 @@
 <?php
 
-namespace frontend\controllers;
+namespace backend\controllers;
 
-use frontend\models\Ogmessageboard;
-use frontend\models\OgmessageSearch;
+use backend\models\Oguser;
+use backend\models\OguserSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
 /**
- * OgmessageController implements the CRUD actions for Ogmessageboard model.
+ * OguserController implements the CRUD actions for Oguser model.
  */
-class OgmessageController extends Controller
+class OguserController extends Controller
 {
     /**
      * @inheritDoc
@@ -32,12 +32,12 @@ class OgmessageController extends Controller
     }
 
     /**
-     * Lists all Ogmessageboard models.
+     * Lists all Oguser models.
      * @return mixed
      */
     public function actionIndex()
     {
-        $searchModel = new OgmessageSearch();
+        $searchModel = new OguserSearch();
         $dataProvider = $searchModel->search($this->request->queryParams);
 
         return $this->render('index', [
@@ -47,7 +47,7 @@ class OgmessageController extends Controller
     }
 
     /**
-     * Displays a single Ogmessageboard model.
+     * Displays a single Oguser model.
      * @param integer $id
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
@@ -60,17 +60,17 @@ class OgmessageController extends Controller
     }
 
     /**
-     * Creates a new Ogmessageboard model.
+     * Creates a new Oguser model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
     public function actionCreate()
     {
-        $model = new Ogmessageboard();
+        $model = new Oguser();
 
         if ($this->request->isPost) {
             if ($model->load($this->request->post()) && $model->save()) {
-                return $this->redirect(['view', 'id' => $model->bId]);
+                return $this->redirect(['view', 'id' => $model->idOG_User]);
             }
         } else {
             $model->loadDefaultValues();
@@ -82,7 +82,7 @@ class OgmessageController extends Controller
     }
 
     /**
-     * Updates an existing Ogmessageboard model.
+     * Updates an existing Oguser model.
      * If update is successful, the browser will be redirected to the 'view' page.
      * @param integer $id
      * @return mixed
@@ -93,7 +93,7 @@ class OgmessageController extends Controller
         $model = $this->findModel($id);
 
         if ($this->request->isPost && $model->load($this->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->bId]);
+            return $this->redirect(['view', 'id' => $model->idOG_User]);
         }
 
         return $this->render('update', [
@@ -102,7 +102,7 @@ class OgmessageController extends Controller
     }
 
     /**
-     * Deletes an existing Ogmessageboard model.
+     * Deletes an existing Oguser model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
      * @param integer $id
      * @return mixed
@@ -116,15 +116,15 @@ class OgmessageController extends Controller
     }
 
     /**
-     * Finds the Ogmessageboard model based on its primary key value.
+     * Finds the Oguser model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
      * @param integer $id
-     * @return Ogmessageboard the loaded model
+     * @return Oguser the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
     protected function findModel($id)
     {
-        if (($model = Ogmessageboard::findOne($id)) !== null) {
+        if (($model = Oguser::findOne($id)) !== null) {
             return $model;
         }
 

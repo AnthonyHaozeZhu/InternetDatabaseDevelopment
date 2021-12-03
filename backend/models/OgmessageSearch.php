@@ -1,15 +1,15 @@
 <?php
 
-namespace frontend\models;
+namespace backend\models;
 
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
-use frontend\models\Ognoticeboard;
+use backend\models\Ogmessageboard;
 
 /**
- * OgnoticeboardSearch represents the model behind the search form of `frontend\models\Ognoticeboard`.
+ * OgmessageSearch represents the model behind the search form of `backend\models\Ogmessageboard`.
  */
-class OgnoticeboardSearch extends Ognoticeboard
+class OgmessageSearch extends Ogmessageboard
 {
     /**
      * {@inheritdoc}
@@ -17,7 +17,7 @@ class OgnoticeboardSearch extends Ognoticeboard
     public function rules()
     {
         return [
-            [['nId', 'bManager'], 'integer'],
+            [['bId', 'bUId'], 'integer'],
             [['bContent', 'bTime'], 'safe'],
         ];
     }
@@ -40,7 +40,7 @@ class OgnoticeboardSearch extends Ognoticeboard
      */
     public function search($params)
     {
-        $query = Ognoticeboard::find();
+        $query = Ogmessageboard::find();
 
         // add conditions that should always apply here
 
@@ -58,8 +58,8 @@ class OgnoticeboardSearch extends Ognoticeboard
 
         // grid filtering conditions
         $query->andFilterWhere([
-            'nId' => $this->nId,
-            'bManager' => $this->bManager,
+            'bId' => $this->bId,
+            'bUId' => $this->bUId,
             'bTime' => $this->bTime,
         ]);
 

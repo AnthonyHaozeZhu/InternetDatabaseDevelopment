@@ -1,15 +1,15 @@
 <?php
 
-namespace frontend\models;
+namespace backend\models;
 
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
-use frontend\models\Ogrecordranking;
+use backend\models\Ogscoresranking;
 
 /**
- * OgrecordrankingSearch represents the model behind the search form of `frontend\models\Ogrecordranking`.
+ * OgscoresrankingSearch represents the model behind the search form of `backend\models\Ogscoresranking`.
  */
-class OgrecordrankingSearch extends Ogrecordranking
+class OgscoresrankingSearch extends Ogscoresranking
 {
     /**
      * {@inheritdoc}
@@ -17,8 +17,8 @@ class OgrecordrankingSearch extends Ogrecordranking
     public function rules()
     {
         return [
-            [['sportsID', 'sportsYear', 'sportsAthletesID'], 'integer'],
-            [['sports', 'sportsRecord'], 'safe'],
+            [['rID'], 'integer'],
+            [['goldRank', 'medalsRank'], 'safe'],
         ];
     }
 
@@ -40,12 +40,11 @@ class OgrecordrankingSearch extends Ogrecordranking
      */
     public function search($params)
     {
-        $query = Ogrecordranking::find();
-
+        $query = Ogscoresranking::find();
         // add conditions that should always apply here
 
         $dataProvider = new ActiveDataProvider([
-            'query' => $query,
+            'query' => $query
         ]);
 
         $this->load($params);
@@ -58,14 +57,13 @@ class OgrecordrankingSearch extends Ogrecordranking
 
         // grid filtering conditions
         $query->andFilterWhere([
-            'sportsID' => $this->sportsID,
-            'sportsYear' => $this->sportsYear,
-            'sportsAthletesID' => $this->sportsAthletesID,
+            'rID' => $this->rID,
         ]);
+        $query->andFilterWhere(['like', 'goldRank', $this->goldRank])
+            ->andFilterWhere(['like', 'medalsRank', $this->medalsRank]);
 
-        $query->andFilterWhere(['like', 'sports', $this->sports])
-            ->andFilterWhere(['like', 'sportsRecord', $this->sportsRecord]);
-
+        //$query2->innerJoin('yii.og_scoresranking','og_yearog.scoresRankID=og_scoresranking.rID');
+        //$query->union($query2,true);
         return $dataProvider;
     }
 }

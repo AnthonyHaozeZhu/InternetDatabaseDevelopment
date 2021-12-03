@@ -1,17 +1,17 @@
 <?php
 
-namespace frontend\controllers;
+namespace backend\controllers;
 
-use frontend\models\Ogsports;
-use frontend\models\OgsportsSearch;
+use backend\models\Ognoticeboard;
+use backend\models\OgnoticeboardSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
 /**
- * OgsportsController implements the CRUD actions for Ogsports model.
+ * OgnoticeboardController implements the CRUD actions for Ognoticeboard model.
  */
-class OgsportsController extends Controller
+class OgnoticeboardController extends Controller
 {
     /**
      * @inheritDoc
@@ -32,12 +32,12 @@ class OgsportsController extends Controller
     }
 
     /**
-     * Lists all Ogsports models.
+     * Lists all Ognoticeboard models.
      * @return mixed
      */
     public function actionIndex()
     {
-        $searchModel = new OgsportsSearch();
+        $searchModel = new OgnoticeboardSearch();
         $dataProvider = $searchModel->search($this->request->queryParams);
 
         return $this->render('index', [
@@ -47,7 +47,7 @@ class OgsportsController extends Controller
     }
 
     /**
-     * Displays a single Ogsports model.
+     * Displays a single Ognoticeboard model.
      * @param integer $id
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
@@ -60,17 +60,17 @@ class OgsportsController extends Controller
     }
 
     /**
-     * Creates a new Ogsports model.
+     * Creates a new Ognoticeboard model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
     public function actionCreate()
     {
-        $model = new Ogsports();
+        $model = new Ognoticeboard();
 
         if ($this->request->isPost) {
             if ($model->load($this->request->post()) && $model->save()) {
-                return $this->redirect(['view', 'id' => $model->sSportsID]);
+                return $this->redirect(['view', 'id' => $model->nId]);
             }
         } else {
             $model->loadDefaultValues();
@@ -82,7 +82,7 @@ class OgsportsController extends Controller
     }
 
     /**
-     * Updates an existing Ogsports model.
+     * Updates an existing Ognoticeboard model.
      * If update is successful, the browser will be redirected to the 'view' page.
      * @param integer $id
      * @return mixed
@@ -93,7 +93,7 @@ class OgsportsController extends Controller
         $model = $this->findModel($id);
 
         if ($this->request->isPost && $model->load($this->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->sSportsID]);
+            return $this->redirect(['view', 'id' => $model->nId]);
         }
 
         return $this->render('update', [
@@ -102,7 +102,7 @@ class OgsportsController extends Controller
     }
 
     /**
-     * Deletes an existing Ogsports model.
+     * Deletes an existing Ognoticeboard model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
      * @param integer $id
      * @return mixed
@@ -116,15 +116,15 @@ class OgsportsController extends Controller
     }
 
     /**
-     * Finds the Ogsports model based on its primary key value.
+     * Finds the Ognoticeboard model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
      * @param integer $id
-     * @return Ogsports the loaded model
+     * @return Ognoticeboard the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
     protected function findModel($id)
     {
-        if (($model = Ogsports::findOne($id)) !== null) {
+        if (($model = Ognoticeboard::findOne($id)) !== null) {
             return $model;
         }
 

@@ -1,15 +1,15 @@
 <?php
 
-namespace frontend\models;
+namespace backend\models;
 
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
-use frontend\models\Ogmessageboard;
+use backend\models\Ogauthority;
 
 /**
- * OgmessageSearch represents the model behind the search form of `frontend\models\Ogmessageboard`.
+ * OgauthoritySearch represents the model behind the search form of `backend\models\Ogauthority`.
  */
-class OgmessageSearch extends Ogmessageboard
+class OgauthoritySearch extends Ogauthority
 {
     /**
      * {@inheritdoc}
@@ -17,8 +17,7 @@ class OgmessageSearch extends Ogmessageboard
     public function rules()
     {
         return [
-            [['bId', 'bUId'], 'integer'],
-            [['bContent', 'bTime'], 'safe'],
+            [['userId', 'isManager'], 'integer'],
         ];
     }
 
@@ -40,7 +39,7 @@ class OgmessageSearch extends Ogmessageboard
      */
     public function search($params)
     {
-        $query = Ogmessageboard::find();
+        $query = Ogauthority::find();
 
         // add conditions that should always apply here
 
@@ -58,12 +57,9 @@ class OgmessageSearch extends Ogmessageboard
 
         // grid filtering conditions
         $query->andFilterWhere([
-            'bId' => $this->bId,
-            'bUId' => $this->bUId,
-            'bTime' => $this->bTime,
+            'userId' => $this->userId,
+            'isManager' => $this->isManager,
         ]);
-
-        $query->andFilterWhere(['like', 'bContent', $this->bContent]);
 
         return $dataProvider;
     }

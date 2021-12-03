@@ -1,15 +1,15 @@
 <?php
 
-namespace frontend\models;
+namespace backend\models;
 
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
-use frontend\models\Ogsports;
+use backend\models\Ognoticeboard;
 
 /**
- * OgsportsSearch represents the model behind the search form of `frontend\models\Ogsports`.
+ * OgnoticeboardSearch represents the model behind the search form of `backend\models\Ognoticeboard`.
  */
-class OgsportsSearch extends Ogsports
+class OgnoticeboardSearch extends Ognoticeboard
 {
     /**
      * {@inheritdoc}
@@ -17,8 +17,8 @@ class OgsportsSearch extends Ogsports
     public function rules()
     {
         return [
-            [['sSportsID', 'sFoundTime'], 'integer'],
-            [['sSports'], 'safe'],
+            [['nId', 'bManager'], 'integer'],
+            [['bContent', 'bTime'], 'safe'],
         ];
     }
 
@@ -40,7 +40,7 @@ class OgsportsSearch extends Ogsports
      */
     public function search($params)
     {
-        $query = Ogsports::find();
+        $query = Ognoticeboard::find();
 
         // add conditions that should always apply here
 
@@ -58,11 +58,12 @@ class OgsportsSearch extends Ogsports
 
         // grid filtering conditions
         $query->andFilterWhere([
-            'sSportsID' => $this->sSportsID,
-            'sFoundTime' => $this->sFoundTime,
+            'nId' => $this->nId,
+            'bManager' => $this->bManager,
+            'bTime' => $this->bTime,
         ]);
 
-        $query->andFilterWhere(['like', 'sSports', $this->sSports]);
+        $query->andFilterWhere(['like', 'bContent', $this->bContent]);
 
         return $dataProvider;
     }

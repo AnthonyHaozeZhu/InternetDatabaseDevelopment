@@ -1,15 +1,15 @@
 <?php
 
-namespace frontend\models;
+namespace backend\models;
 
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
-use frontend\models\Ogauthority;
+use backend\models\Ogsports;
 
 /**
- * OgauthoritySearch represents the model behind the search form of `frontend\models\Ogauthority`.
+ * OgsportsSearch represents the model behind the search form of `backend\models\Ogsports`.
  */
-class OgauthoritySearch extends Ogauthority
+class OgsportsSearch extends Ogsports
 {
     /**
      * {@inheritdoc}
@@ -17,7 +17,8 @@ class OgauthoritySearch extends Ogauthority
     public function rules()
     {
         return [
-            [['userId', 'isManager'], 'integer'],
+            [['sSportsID', 'sFoundTime'], 'integer'],
+            [['sSports'], 'safe'],
         ];
     }
 
@@ -39,7 +40,7 @@ class OgauthoritySearch extends Ogauthority
      */
     public function search($params)
     {
-        $query = Ogauthority::find();
+        $query = Ogsports::find();
 
         // add conditions that should always apply here
 
@@ -57,9 +58,11 @@ class OgauthoritySearch extends Ogauthority
 
         // grid filtering conditions
         $query->andFilterWhere([
-            'userId' => $this->userId,
-            'isManager' => $this->isManager,
+            'sSportsID' => $this->sSportsID,
+            'sFoundTime' => $this->sFoundTime,
         ]);
+
+        $query->andFilterWhere(['like', 'sSports', $this->sSports]);
 
         return $dataProvider;
     }

@@ -1,15 +1,15 @@
 <?php
 
-namespace frontend\models;
+namespace backend\models;
 
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
-use frontend\models\Ogyearog;
+use backend\models\Ogrecordranking;
 
 /**
- * OgyearogSearch represents the model behind the search form of `frontend\models\Ogyearog`.
+ * OgrecordrankingSearch represents the model behind the search form of `backend\models\Ogrecordranking`.
  */
-class OgyearogSearch extends Ogyearog
+class OgrecordrankingSearch extends Ogrecordranking
 {
     /**
      * {@inheritdoc}
@@ -17,8 +17,8 @@ class OgyearogSearch extends Ogyearog
     public function rules()
     {
         return [
-            [['year', 'scoresRankID'], 'integer'],
-            [['country', 'hostCity'], 'safe'],
+            [['sportsID', 'sportsYear', 'sportsAthletesID'], 'integer'],
+            [['sports', 'sportsRecord'], 'safe'],
         ];
     }
 
@@ -40,7 +40,7 @@ class OgyearogSearch extends Ogyearog
      */
     public function search($params)
     {
-        $query = Ogyearog::find();
+        $query = Ogrecordranking::find();
 
         // add conditions that should always apply here
 
@@ -58,12 +58,13 @@ class OgyearogSearch extends Ogyearog
 
         // grid filtering conditions
         $query->andFilterWhere([
-            'year' => $this->year,
-            'scoresRankID' => $this->scoresRankID,
+            'sportsID' => $this->sportsID,
+            'sportsYear' => $this->sportsYear,
+            'sportsAthletesID' => $this->sportsAthletesID,
         ]);
 
-        $query->andFilterWhere(['like', 'country', $this->country])
-            ->andFilterWhere(['like', 'hostCity', $this->hostCity]);
+        $query->andFilterWhere(['like', 'sports', $this->sports])
+            ->andFilterWhere(['like', 'sportsRecord', $this->sportsRecord]);
 
         return $dataProvider;
     }
