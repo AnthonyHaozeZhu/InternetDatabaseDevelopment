@@ -24,7 +24,32 @@ AppAsset::register($this);
 </head>
 <body class="d-flex flex-column h-100">
 <?php $this->beginBody() ?>
+<html lang="en">
+<head>
+<title>Logistics &mdash; Colorlib Website Template</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+<link rel="stylesheet" href="statics/css/style.css">
+
+<link rel="stylesheet" href="statics/css/bootstrap.min.css">
+<link rel="stylesheet" href="statics/css/magnific-popup.css">
+<link rel="stylesheet" href="statics/css/jquery-ui.css">
+<link rel="stylesheet" href="statics/css/owl.carousel.min.css">
+<link rel="stylesheet" href="statics/css/owl.theme.default.min.css">
+
+<link rel="stylesheet" href="statics/css/bootstrap-datepicker.css">
+
+<link rel="stylesheet" href="statics/css/flaticon.css">
+
+</head>
+<body data-spy="scroll" data-target=".site-navbar-target" data-offset="200">
+
+
+<link rel="stylesheet" href="statics/css/aos.css">
+
+<link rel="stylesheet" href="statics/css/style1.css">
+<div class="wrap">
 <header>
     <?php
     NavBar::begin([
@@ -35,7 +60,7 @@ AppAsset::register($this);
         ],
     ]);
     $menuItems = [
-        ['label' => 'Home', 'url' => ['/site/index']],
+        ['label' => '后台主页', 'url' => ['/site/index']],
     ];
     if (Yii::$app->user->isGuest) {
         $menuItems[] = ['label' => 'Login', 'url' => ['/site/login']];
@@ -73,6 +98,23 @@ AppAsset::register($this);
         <p class="float-right"><?= Yii::powered() ?></p>
     </div>
 </footer>
+
+<script src="statics/js/jquery-3.3.1.min.js"></script>
+<script src="statics/js/jquery-migrate-3.0.1.min.js"></script>
+<script src="statics/js/jquery-ui.js"></script>
+<script src="statics/js/jquery.easing.1.3.js"></script>
+<script src="statics/js/popper.min.js"></script>
+<script src="statics/js/bootstrap.min.js"></script>
+<script src="statics/js/owl.carousel.min.js"></script>
+<script src="statics/js/jquery.stellar.min.js"></script>
+<script src="statics/js/jquery.countdown.min.js"></script>
+<script src="statics/js/jquery.magnific-popup.min.js"></script>
+<script src="statics/js/bootstrap-datepicker.min.js"></script>
+<script src="statics/js/aos.js"></script>
+<script src="statics/js/main.js"></script>
+
+</body>
+</html>
 
 <?php $this->endBody() ?>
 </body>
