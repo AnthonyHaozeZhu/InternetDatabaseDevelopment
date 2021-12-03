@@ -72,18 +72,18 @@ AppAsset::register($this);
                 ],
             ]);
             $menuItems = [
-                ['label' => '主页', 'url' => ['#主页']],
-                ['label' => '冬奥会简介', 'url' => ['#section-about']],
-                ['label' => 'Services', 'url' => ['#section-services']],
-                ['label' => '体育项目', 'url' => ['#section-industries']],
-                ['label' => 'Blog', 'url' => ['#section-industries']],
-                ['label' => 'About', 'url' => ['#section-blog']],
-                ['label' => 'Contact', 'url' => ['/site/contact']],
+                ['label' => '主页', 'url' => ['/site/index']],
+                //['label' => '冬奥会简介', 'url' => ['#section-about']],
+                //['label' => 'Services', 'url' => ['#section-services']],
+                //['label' => '体育项目', 'url' => ['#section-industries']],
+                //['label' => 'Blog', 'url' => ['#section-industries']],
+                //['label' => 'About', 'url' => ['#section-blog']],
+                ['label' => '留言板', 'url' => ['/site/contact']],
                 ['label' => '关于我们', 'url' => ['/site/about']],
             ];
             if (Yii::$app->user->isGuest) {
-                $menuItems[] = ['label' => 'Signup', 'url' => ['/site/signup']];
-                $menuItems[] = ['label' => 'Login', 'url' => ['/site/login']];
+                $menuItems[] = ['label' => '注册', 'url' => ['/site/signup']];
+                $menuItems[] = ['label' => '登陆', 'url' => ['/site/login']];
             } else {
                 $menuItems[] = '<li>'
                     . Html::beginForm(['/site/logout'], 'post')

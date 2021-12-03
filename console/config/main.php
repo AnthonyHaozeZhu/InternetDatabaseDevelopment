@@ -23,6 +23,14 @@ return [
           ],
     ],
     'components' => [
+        'authManager' => [
+            'class' => 'yii\rbac\DbManager',
+            // uncomment if you want to cache RBAC items hierarchy
+            // 'cache' => 'cache',
+        ],
+        'user' => [
+            'identityClass' => 'app\models\User',
+        ],
         'log' => [
             'targets' => [
                 [

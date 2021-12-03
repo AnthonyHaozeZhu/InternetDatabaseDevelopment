@@ -103,7 +103,7 @@ $this->params['breadcrumbs'][] = $this->title;
 		  <div class="how-it-work-body">
 			<h2>团队作业2——设计文档</h2>
 			<ul class="ul-check list-unstyled success">
-			  <li class="text-white">data/team/指数小队_设计文档(1911530_1911501_1911506_1911419).pdfr</li>
+			  <li class="text-white">data/team/指数小队_设计文档(1911530_1911501_1911506_1911419).pdf</li>
 			</ul>
 		  </div>
 		</div>
