@@ -27,7 +27,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'bContent:ntext',
             'bTime',
 
-            ['class' => 'yii\grid\ActionColumn'],
+            //['class' => 'yii\grid\ActionColumn'],
         ],
     ]); ?>
 

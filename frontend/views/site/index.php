@@ -78,7 +78,7 @@ AppAsset::register($this);
                 //['label' => '体育项目', 'url' => ['#section-industries']],
                 //['label' => 'Blog', 'url' => ['#section-industries']],
                 //['label' => 'About', 'url' => ['#section-blog']],
-                ['label' => '留言板', 'url' => ['/site/contact']],
+                //['label' => '留言板', 'url' => ['/site/contact']],
                 ['label' => '关于我们', 'url' => ['/site/about']],
             ];
             if (Yii::$app->user->isGuest) {
@@ -243,86 +243,6 @@ AppAsset::register($this);
 
 
 
-
-
-<div class="site-section bg-light" id="section-services">
-  <div class="container">
-	<div class="row justify-content-center mb-5" data-aos="fade-up">
-	  <div class="col-md-7 text-center border-primary">
-		<h2 class="mb-0 text-primary">Our Services</h2>
-		<p class="color-black-opacity-5">Lorem ipsum dolor sit amet.</p>
-	  </div>
-	</div>
-	<div class="row align-items-stretch">
-	  <div class="col-md-6 col-lg-4 mb-4 mb-lg-4" data-aos="fade-up">
-		<div class="unit-4 d-flex">
-		  <div class="unit-4-icon mr-4"><span class="text-primary flaticon-plane"></span></div>
-		  <div>
-			<h3>Air Freight</h3>
-			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis quis molestiae vitae eligendi at.</p>
-			<p><a href="#">Learn More</a></p>
-		  </div>
-		</div>
-	  </div>
-	  <div class="col-md-6 col-lg-4 mb-4 mb-lg-4" data-aos="fade-up" data-aos-delay="100">
-		<div class="unit-4 d-flex">
-		  <div class="unit-4-icon mr-4"><span class="text-primary flaticon-boat-ship"></span></div>
-		  <div>
-			<h3>Ocean Freight</h3>
-			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis quis molestiae vitae eligendi at.</p>
-			<p><a href="#">Learn More</a></p>
-		  </div>
-		</div>
-	  </div>
-	  <div class="col-md-6 col-lg-4 mb-4 mb-lg-4" data-aos="fade-up" data-aos-delay="200">
-		<div class="unit-4 d-flex">
-		  <div class="unit-4-icon mr-4"><span class="text-primary flaticon-truck"></span></div>
-		  <div>
-			<h3>Land Transportation</h3>
-			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis quis molestiae vitae eligendi at.</p>
-			<p><a href="#">Learn More</a></p>
-		  </div>
-		</div>
-	  </div>
-
-
-	  <div class="col-md-6 col-lg-4 mb-4 mb-lg-4" data-aos="fade-up" data-aos-delay="300">
-		<div class="unit-4 d-flex">
-		  <div class="unit-4-icon mr-4"><span class="text-primary flaticon-warehouse"></span></div>
-		  <div>
-			<h3>Warehousing</h3>
-			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis quis molestiae vitae eligendi at.</p>
-			<p><a href="#">Learn More</a></p>
-		  </div>
-		</div>
-	  </div>
-	  <div class="col-md-6 col-lg-4 mb-4 mb-lg-4" data-aos="fade-up" data-aos-delay="400">
-		<div class="unit-4 d-flex">
-		  <div class="unit-4-icon mr-4"><span class="text-primary flaticon-wooden"></span></div>
-		  <div>
-			<h3>Storage</h3>
-			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis quis molestiae vitae eligendi at.</p>
-			<p><a href="#">Learn More</a></p>
-		  </div>
-		</div>
-	  </div>
-	  <div class="col-md-6 col-lg-4 mb-4 mb-lg-4" data-aos="fade-up" data-aos-delay="500">
-		<div class="unit-4 d-flex">
-		  <div class="unit-4-icon mr-4"><span class="text-primary flaticon-worldwide"></span></div>
-		  <div>
-			<h3>Worldwide Delivery</h3>
-			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis quis molestiae vitae eligendi at.</p>
-			<p><a href="#">Learn More</a></p>
-		  </div>
-		</div>
-	  </div>
-
-	</div>
-  </div>
-</div>
-
-
-
 <div class="site-section block-13" id="section-industries">
 
   <div class="container">
@@ -454,127 +374,38 @@ AppAsset::register($this);
   <div class="container">
 	<div class="row justify-content-center mb-5">
 	  <div class="col-md-7 text-center border-primary">
-		<h2 class="font-weight-light text-primary">Our Blog</h2>
-		<p class="color-black-opacity-5">See Our Daily News &amp; Updates</p>
+		<h2 class="font-weight-light text-primary"><a href = "/advanced/frontend/web/index.php?r=ognoticeboard">公告板</a></h2>
+		<p class="color-black-opacity-5">See Our Daily News&amp; Updates</p>
 	  </div>
 	</div>
 	<div class="row mb-5 align-items-stretch">
 	  <div class="col-md-6 col-lg-4 mb-4 mb-lg-4" data-aos="fade-up">
 		<div class="h-entry">
 		  <a href="single.html"><img src="statics/picture/blog_1.jpg" alt="Image" class="img-fluid"></a>
-		  <h2 class="font-size-regular"><a href="single.html">How Logistics Company Improve Spendings</a></h2>
-		  <div class="meta mb-4">by Jed Wilson <span class="mx-2">&bullet;</span> Jan 18, 2021 <span class="mx-2">&bullet;</span> <a href="#">News</a></div>
-		  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus eligendi nobis ea maiores sapiente veritatis reprehenderit suscipit quaerat rerum voluptatibus a eius.</p>
+		  <h2 class="font-size-regular"><a href="http://baijiahao.baidu.com/s?id=1694568875225638276&wfr=spider&for=pc">姿势正确姿势正确是学滑雪的良好开端</a></h2>
 		</div> 
 	  </div>
 	  <div class="col-md-6 col-lg-4 mb-4 mb-lg-4" data-aos="fade-up" data-aos-delay="100">
 		<div class="h-entry">
 		  <a href="single.html"><img src="statics/picture/blog_2.jpg" alt="Image" class="img-fluid"></a>
-		  <h2 class="font-size-regular"><a href="single.html">How Logistics Company Improve Spendings</a></h2>
-		  <div class="meta mb-4">by Jed Wilson <span class="mx-2">&bullet;</span> Jan 18, 2021 <span class="mx-2">&bullet;</span> <a href="#">News</a></div>
-		  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus eligendi nobis ea maiores sapiente veritatis reprehenderit suscipit quaerat rerum voluptatibus a eius.</p>
+		  <h2 class="font-size-regular"><a href="http://www.xjxhd.cn/?id=208546">单板滑雪小技巧</a></h2>
 		</div> 
 	  </div>
 	  <div class="col-md-6 col-lg-4 mb-4 mb-lg-4" data-aos="fade-up" data-aos-delay="200">
 		<div class="h-entry">
 		  <a href="single.html"><img src="statics/picture/blog_3.jpg" alt="Image" class="img-fluid"></a>
-		  <h2 class="font-size-regular"><a href="single.html">How Logistics Company Improve Spendings</a></h2>
-		  <div class="meta mb-4">by Jed Wilson <span class="mx-2">&bullet;</span> Jan 18, 2021 <span class="mx-2">&bullet;</span> <a href="#">News</a></div>
-		  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus eligendi nobis ea maiores sapiente veritatis reprehenderit suscipit quaerat rerum voluptatibus a eius.</p>
+		  <h2 class="font-size-regular"><a href="https://xueshu.baidu.com/usercenter/paper/show?paperid=7e9afd95c4df4b48b19805905531b1cd">谈谈花样滑冰中的动律美感问题</a></h2>
 		</div>
 	  </div>
 	</div>
-	<div class="row">
+	<!-- <div class="row">
 	  <div class="col-12 text-center" data-aos="fade-up" data-aos-delay="300">
 		<p class="mb-0"><a href="javascript:;" class="btn btn-primary py-3 px-5 text-white">View All Blog Posts</a></p>
 	  </div>
-	</div>
+	</div> -->
   </div>
 </div>
 
-<div class="site-section bg-light" id="section-contact">
-  <div class="container">
-	<div class="row justify-content-center mb-5">
-	  <div class="col-md-7 text-center border-primary">
-		<h2 class="font-weight-light text-primary">登陆/注册</h2>
-		<p class="color-black-opacity-5">See Our Daily News &amp; Updates</p>
-	  </div>
-	</div>
-	<div class="row">
-	  <div class="col-md-7 mb-5">
-
-		
-
-		<form action="#" class="p-5 bg-white">
-		 
-
-		  <div class="row form-group">
-			<div class="col-md-6 mb-3 mb-md-0">
-			  <label class="text-black" for="fname">First Name</label>
-			  <input type="text" id="fname" class="form-control">
-			</div>
-			<div class="col-md-6">
-			  <label class="text-black" for="lname">Last Name</label>
-			  <input type="text" id="lname" class="form-control">
-			</div>
-		  </div>
-
-		  <div class="row form-group">
-			
-			<div class="col-md-12">
-			  <label class="text-black" for="email">Email</label> 
-			  <input type="email" id="email" class="form-control">
-			</div>
-		  </div>
-
-		  <div class="row form-group">
-			
-			<div class="col-md-12">
-			  <label class="text-black" for="subject">Subject</label> 
-			  <input type="subject" id="subject" class="form-control">
-			</div>
-		  </div>
-
-		  <div class="row form-group">
-			<div class="col-md-12">
-			  <label class="text-black" for="message">Message</label> 
-			  <textarea name="message" id="message" cols="30" rows="7" class="form-control"></textarea>
-			</div>
-		  </div>
-
-		  <div class="row form-group">
-			<div class="col-md-12">
-			  <input type="submit" value="Send Message" class="btn btn-primary py-2 px-4 text-white">
-			</div>
-		  </div>
-
-
-		</form>
-	  </div>
-	  <div class="col-md-5">
-		
-		<div class="p-4 mb-3 bg-white">
-		  <p class="mb-0 font-weight-bold">Address</p>
-		  <p class="mb-4">计算机学院, 海河教育园区南开大学, 津南区, 天津</p>
-
-		  <p class="mb-0 font-weight-bold">Phone</p>
-		  <p class="mb-4"><a href="#">+86 18713012939</a></p>
-
-		  <p class="mb-0 font-weight-bold">Email Address</p>
-		  <p class="mb-0"><a href="#">1119886232@qq.com</a></p>
-
-		</div>
-		
-		<div class="p-4 mb-3 bg-white">
-		  <h3 class="h5 text-black mb-3">More Info</h3>
-		  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa ad iure porro mollitia architecto hic consequuntur. Distinctio nisi perferendis dolore, ipsa consectetur? Fugiat quaerat eos qui, libero neque sed nulla.</p>
-		  <p><a href="#" class="btn btn-primary px-4 py-2 text-white">Learn More</a></p>
-		</div>
-
-	  </div>
-	</div>
-  </div>
-</div>
 
 
 <footer class="site-footer">
@@ -587,33 +418,25 @@ AppAsset::register($this);
 			<p>冬季奥林匹克运动会（Olympic Winter Games），简称为冬季奥运会、冬奥会。主要由全世界地区举行，是世界规模最大的冬季综合性运动会，每四年举办一届，1994年起与夏季奥林匹克运动会相间举行。参与国主要分布在世界各地，包括欧洲、非洲、美洲、亚洲、大洋洲。由国际奥林匹克委员会(International Olympic Committee)主办。按实际举行次数计算届数。</p>
 		  </div>
 		  
-		  <div class="col-md-3">
-			<h2 class="footer-heading mb-4">Quick Links</h2>
-			<ul class="list-unstyled">
-			  <li><a href="#">冬奥会简介</a></li>
-			  <li><a href="#">Services</a></li>
-			  <li><a href="#">用户留言</a></li>
-			  <li><a href="#">登陆/注册</a></li>
-			</ul>
-		  </div>
-		  <div class="col-md-3">
+		  
+		  <!-- <div class="col-md-3">
 			<h2 class="footer-heading mb-4">Follow Us</h2>
 			<a href="#" class="pl-0 pr-3"><span class="icon-facebook"></span></a>
 			<a href="#" class="pl-3 pr-3"><span class="icon-twitter"></span></a>
 			<a href="#" class="pl-3 pr-3"><span class="icon-instagram"></span></a>
 			<a href="#" class="pl-3 pr-3"><span class="icon-linkedin"></span></a>
-		  </div>
+		  </div> -->
 		</div>
 	  </div>
 	  <div class="col-md-3">
-		<h2 class="footer-heading mb-4">Subscribe Newsletter</h2>
+		<!-- <h2 class="footer-heading mb-4">Subscribe Newsletter</h2> -->
 		<form action="#" method="post">
-		  <div class="input-group mb-3">
+		  <!-- <div class="input-group mb-3">
 			<input type="text" class="form-control border-secondary text-white bg-transparent" placeholder="Enter Email" aria-label="Enter Email" aria-describedby="button-addon2">
 			<div class="input-group-append">
 			  <button class="btn btn-primary text-white" type="button" id="button-addon2">Send</button>
 			</div>
-		  </div>
+		  </div> -->
 		</form>
 	  </div>
 	</div>

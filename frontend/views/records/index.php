@@ -7,7 +7,7 @@ use yii\grid\GridView;
 /* @var $searchModel app\models\RecordsSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Records';
+$this->title = '冬奥会历史纪录';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="records-index">
@@ -26,7 +26,19 @@ $this->params['breadcrumbs'][] = $this->title;
             'sportsYear',
             'aName',
             'aCountry',
-            'alsRetired',
+            [
+                'attribute'=>'alsRetired',
+                'value'=>function($model){
+                    if($model->alsRetired == 'M')
+                    {
+                        return "否";
+                    }
+                    else
+                    {
+                        return "是";
+                    }
+                }
+            ]
         ],
     ]); ?>
 
