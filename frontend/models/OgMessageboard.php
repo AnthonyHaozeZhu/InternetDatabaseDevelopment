@@ -46,9 +46,9 @@ class OgMessageboard extends \yii\db\ActiveRecord
     {
         return [
             'bId' => 'B ID',
-            'bUId' => 'B U ID',
-            'bContent' => 'B Content',
-            'bTime' => 'B Time',
+            'bUId' => '留言者姓名',
+            'bContent' => '内容',
+            'bTime' => '时间',
         ];
     }
 

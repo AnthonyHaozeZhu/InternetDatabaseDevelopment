@@ -14,6 +14,8 @@ use yii\filters\AccessControl;
  */
 class OgmessageController extends Controller
 {
+
+    public $enableCsrfValidation=false;
     /**
      * @inheritDoc
      */
@@ -28,16 +30,16 @@ class OgmessageController extends Controller
                         'delete' => ['POST'],
                     ],
                 ],
-                'access' => [
-                    'class' => AccessControl::className(),
-                    'rules' => [
-                        [
-                            'allow' => true,
-                            'actions' => ['actionCreate'],
-                            'roles' => ['@'],
-                        ],
-                    ]
-                ]
+                // 'access' => [
+                //     'class' => AccessControl::className(),
+                //     'rules' => [
+                //         [
+                //             'allow' => true,
+                //             'actions' => ['create'],
+                //             'roles' => ['@'],
+                //         ],
+                //     ]
+                // ]
             ]
         );
     }

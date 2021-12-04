@@ -392,7 +392,7 @@ AppAsset::register($this);
 
 	<div class="row justify-content-center mb-5">
 	  <div class="col-md-7 text-center border-primary">
-		<h2 class="font-weight-light text-primary">用户留言</h2>
+		<h2 class="font-weight-light text-primary"><a href = "/advanced/frontend/web/index.php?r=ogmessage">用户留言</a></h2>
 	  </div>
 	</div>
 

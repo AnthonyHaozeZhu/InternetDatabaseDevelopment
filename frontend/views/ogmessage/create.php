@@ -5,7 +5,7 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model app\models\Ogmessageboard */
 
-$this->title = 'Create Ogmessageboard';
+$this->title = '留言';
 $this->params['breadcrumbs'][] = ['label' => 'Ogmessageboards', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
