@@ -14,6 +14,8 @@ use yii\web\Response;
  */
 class SiteController extends Controller
 {
+
+    public $enableCsrfValidation=false;
     /**
      * {@inheritdoc}
      */
@@ -26,12 +28,16 @@ class SiteController extends Controller
                     [
                         'actions' => ['login', 'error'],
                         'allow' => true,
-                        
                     ],
                     [
-                        'actions' => ['logout', 'index'],
+                        'actions' => ['index'],
                         'allow' => true,
-                        'roles' => ['createPost'],
+                        'roles' => ['updatePost'],
+                    ],
+                    [
+                        'actions' => ['logout'],
+                        'allow' => true,
+                        'roles' => ['@'],
                     ],
                 ],
             ],
