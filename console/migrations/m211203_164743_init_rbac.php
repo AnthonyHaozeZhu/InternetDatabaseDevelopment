@@ -55,8 +55,8 @@ class m211203_164743_init_rbac extends Migration
 
         // 为用户指派角色。其中 1 和 2 是由 IdentityInterface::getId() 返回的id
         // 通常在你的 User 模型中实现这个函数。
-        $auth->assign($author, 2);
-        $auth->assign($admin, 1);
+        //$auth->assign($author, 2);
+        //$auth->assign($admin, 1);
     }
 
     public function down()

@@ -85,7 +85,7 @@ $this->params['breadcrumbs'][] = $this->title;
 		<div class="how-it-work-item">
 		  <span class="number">7</span>
 		  <div class="how-it-work-body">
-			<h2><a href = "/advanced/backend/web/index.php?r=ogmessage">留言板管理</a></h2>
+			<h2><a href = "/advanced/backend/web/index.php?r=ognoticeboard">公告板管理</a></h2>
 		  </div>
 		</div>
 	  </div>
