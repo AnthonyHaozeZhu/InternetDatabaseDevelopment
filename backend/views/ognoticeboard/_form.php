@@ -8,15 +8,22 @@ use yii\widgets\ActiveForm;
 /* @var $form yii\widgets\ActiveForm */
 ?>
 
+<?php 
+
+    $user = Yii::$app->user->identity->id;
+    $time = time();
+
+?>
+
 <div class="ognoticeboard-form">
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'bManager')->textInput() ?>
+    <?= $form->field($model, 'bManager')->input('text',['value'=> $user]) ?>
 
     <?= $form->field($model, 'bContent')->textarea(['rows' => 6]) ?>
 
-    <?= $form->field($model, 'bTime')->textInput() ?>
+    <?= $form->field($model, 'bTime')->input('text',['value'=> $time]) ?>
 
     <div class="form-group">
         <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>

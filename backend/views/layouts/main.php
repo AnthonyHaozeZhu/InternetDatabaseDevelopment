@@ -61,6 +61,7 @@ AppAsset::register($this);
     ]);
     $menuItems = [
         ['label' => '后台主页', 'url' => ['/site/index']],
+        //['label' => '前台主页', 'url' => [Yii::$app->urlManagerFrontend->createAbsoluteUrl('/advanced/frontend/web/index.php')]],
     ];
     if (Yii::$app->user->isGuest) {
         $menuItems[] = ['label' => 'Login', 'url' => ['/site/login']];

@@ -36,9 +36,15 @@ $this->params['breadcrumbs'][] = $this->title;
             //'bId',
             'bUId',
             'bContent:ntext',
-            'bTime',
+            [
+                'attribute'=>'bTime',
+                'value'=>function($model){
+                    return date('Y-m-d', $model->bTime);
+                    
+                }
+            ]
 
-            ['class' => 'yii\grid\ActionColumn'],
+            //['class' => 'yii\grid\ActionColumn'],
         ],
     ]); ?>
 

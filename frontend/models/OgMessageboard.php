@@ -30,12 +30,12 @@ class OgMessageboard extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['bId', 'bUId', 'bContent', 'bTime'], 'required'],
-            [['bId', 'bUId'], 'integer'],
-            [['bContent'], 'string'],
+            [['bUId', 'bContent'], 'required'],
+            [['bId'], 'integer'],
+            [['bContent', 'bUId'], 'string'],
             [['bTime'], 'safe'],
             [['bId'], 'unique'],
-            [['bUId'], 'exist'], //'skipOnError' => true, 'targetClass' => OgUser::className(), 'targetAttribute' => ['bUId' => 'idOG_User']],
+            ///[['bUId'], 'exist'], //'skipOnError' => true, 'targetClass' => OgUser::className(), 'targetAttribute' => ['bUId' => 'idOG_User']],
         ];
     }
 

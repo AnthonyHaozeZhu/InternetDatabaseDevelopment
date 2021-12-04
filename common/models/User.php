@@ -134,6 +134,15 @@ class User extends ActiveRecord implements IdentityInterface
         return $timestamp + $expire >= time();
     }
 
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getusername()
+    {
+        return $this->username;
+    }
+
     /**
      * {@inheritdoc}
      */
