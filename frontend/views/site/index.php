@@ -324,8 +324,8 @@ AppAsset::register($this);
 			
 		  </figure>
 		  <blockquote>
-			<p>&ldquo;Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur unde reprehenderit aperiam quaerat fugiat repudiandae explicabo animi minima fuga beatae illum eligendi incidunt consequatur. Amet dolores excepturi earum unde iusto.&rdquo;</p>
-			<p class="author"> &mdash; John Trump</p>
+			<p>&ldquo;纯洁的冰雪，激情的约会；用炽热的心，融化坚实的冰； 我们拥有热情，让这个冬天不再冷。 一百年的梦想，历经风雨霜雪的磨练，终于如愿以尝；一个世纪的守望，，经过几代人含辛茹苦的努力，终于可以一展华夏的精彩篇章。&rdquo;</p>
+			<p class="author"> &mdash; 朱浩泽</p>
 		  </blockquote>
 		</div>
 	  </div>
@@ -336,8 +336,8 @@ AppAsset::register($this);
 			
 		  </figure>
 		  <blockquote>
-			<p>&ldquo;Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur unde reprehenderit aperiam quaerat fugiat repudiandae explicabo animi minima fuga beatae illum eligendi incidunt consequatur. Amet dolores excepturi earum unde iusto.&rdquo;</p>
-			<p class="author"> &mdash; Roger Moore</p>
+			<p>&ldquo;有多少次挥汗如雨，伤痛曾添满记忆，只因为始终相信，去拼搏才能胜利。总在鼓舞自己，要成功就得努力。热血在赛场沸腾，巨人在赛场升起。&rdquo;</p>
+			<p class="author"> &mdash; 宣恩允</p>
 		  </blockquote>
 		</div>
 	  </div>
@@ -348,8 +348,8 @@ AppAsset::register($this);
 			<img src="statics/picture/person_4.jpg" alt="Image" class="img-fluid mb-3">
 		  </figure>
 		  <blockquote>
-			<p>&ldquo;Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur unde reprehenderit aperiam quaerat fugiat repudiandae explicabo animi minima fuga beatae illum eligendi incidunt consequatur. Amet dolores excepturi earum unde iusto.&rdquo;</p>
-			<p class="author"> &mdash; Ben Carson</p>
+			<p>&ldquo;希望举办2022 年冬奥会，打造纯洁的体育运动环境、自然生态环境和社会人文环境，推动冬季运动蓬勃发展； 邀请全世界不同信仰、不同肤色、不同种族的人们欢聚一堂，共享奥林匹克带来的激情、欢乐与福祉。&rdquo;</p>
+			<p class="author"> &mdash; 胡皓冬</p>
 		  </blockquote>
 		</div>
 	  </div>
@@ -360,8 +360,8 @@ AppAsset::register($this);
 			<img src="statics/picture/person_5.jpg" alt="Image" class="img-fluid mb-3">
 		  </figure>
 		  <blockquote>
-			<p>&ldquo;Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur unde reprehenderit aperiam quaerat fugiat repudiandae explicabo animi minima fuga beatae illum eligendi incidunt consequatur. Amet dolores excepturi earum unde iusto.&rdquo;</p>
-			<p class="author"> &mdash; Jed Smith</p>
+			<p>&ldquo;冬奥会，我自豪 二二年，京和家， 办冬奥，改生活。 激情冰雪属于你，雪道飞驰更带劲，看体育健儿雪上英姿，瞧各国英豪潇洒瞬间。&rdquo;</p>
+			<p class="author"> &mdash; 尧泽斌</p>
 		  </blockquote>
 		</div>
 	  </div>

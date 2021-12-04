@@ -19,15 +19,19 @@ use app\models\User;
 
 <div class="ogmessageboard-form">
 
-    <?php $form = ActiveForm::begin(); ?>
+    <?php $form = ActiveForm::begin(
+        [
+            'options' => ['class' => 'form-horizontal'],
+        ]
+    ); ?>
 
     <!-- <?= $form->field($model, 'bId')->textInput() ?> -->
 
-    <?= $form->field($model, 'bUId')-> input('text',['value'=> $user]) ?>
+    <?= $form->field($model, 'bUId')-> hiddenInput(['value'=> $user]); ?>
 
     <?= $form->field($model, 'bContent')->textarea(['rows' => 6]) ?>
 
-    <?= $form->field($model, 'bTime')->input('text',['value'=> $time]) ?>
+    <?= $form->field($model, 'bTime') -> hiddenInput(['value'=> $time]); ?>
 
     <div class="form-group">
         <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>
