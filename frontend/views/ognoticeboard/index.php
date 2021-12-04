@@ -19,12 +19,21 @@ $this->params['breadcrumbs'][] = $this->title;
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
         //'filterModel' => $searchModel,
+        'options' => [
+            'style'=>'overflow: auto; word-wrap: break-word;'
+        ],
         'columns' => [
             //['class' => 'yii\grid\SerialColumn'],
 
             //'nId',
             //'bManager',
-            'bContent:ntext',
+            [
+                'attribute'=>'bContent',
+                // 'contentOptions' => [
+                // 'style'=>'word-wrap:break-word;word-break:break-all'
+                // ],
+            'headerOptions' => ['width' => '700']
+            ],
             [
                 'attribute'=>'bTime',
                 'value'=>function($model){
