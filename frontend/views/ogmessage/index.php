@@ -18,6 +18,10 @@ $this->params['breadcrumbs'][] = $this->title;
     if(!Yii::$app->user->isGuest){
         echo Html::a('点击进行留言', ['create'], ['class' => 'btn btn-success']);
     }
+    else
+    {
+        echo Html::a('登陆后进行留言', yii\helpers\Url::to(['/site/login']), ['class' => 'btn btn-info']);
+    }
     ?>
     </p>
         
