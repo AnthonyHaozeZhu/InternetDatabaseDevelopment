@@ -416,6 +416,7 @@ AppAsset::register($this);
 		  <div class="col-md-5 mr-auto">
 			<h2 class="footer-heading mb-4">冬奥会简介</h2>
 			<p>冬季奥林匹克运动会（Olympic Winter Games），简称为冬季奥运会、冬奥会。主要由全世界地区举行，是世界规模最大的冬季综合性运动会，每四年举办一届，1994年起与夏季奥林匹克运动会相间举行。参与国主要分布在世界各地，包括欧洲、非洲、美洲、亚洲、大洋洲。由国际奥林匹克委员会(International Olympic Committee)主办。按实际举行次数计算届数。</p>
+			<?php echo "<li><a href = \"/advanced/backend/web/index.php\">后台</a></li>"; ?>
 		  </div>
 		  
 		  
