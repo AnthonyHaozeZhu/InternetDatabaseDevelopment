@@ -1,4 +1,4 @@
-$\color{red}{NKU同学参考前务必阅读我主页readme中的内容$
+$\color{red}{NKU同学参考前务必阅读我主页readme中的内容}$
 
 <p align="center">
     <a href="https://github.com/yiisoft" target="_blank">
