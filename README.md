@@ -1,3 +1,5 @@
+$\color{red}{红色字}NKU同学参考前务必阅读我主页readme中的内容$
+
 <p align="center">
     <a href="https://github.com/yiisoft" target="_blank">
         <img src="https://avatars0.githubusercontent.com/u/993323" height="100px">
